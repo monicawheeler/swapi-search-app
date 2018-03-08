@@ -1,0 +1,78 @@
+<div layout="row" layout-align="end none">
+    <div class="count-container">
+        <i class="fas fa-heart"></i>
+        <span class="count-value">{{vm.favoriteCount.count > 0?vm.favoriteCount.count:''}}</span>
+    </div>
+</div>
+
+<h1>Star Wars API App</h1>
+
+<div class="row" layout="row">
+    <md-input-container flex="50" class="flex-50">
+        <label>Type</label>
+        <md-select name="type" ng-model="vm.selectedResource" required>
+            <md-option ng-repeat="(key, val) in vm.resources.list" value="{{key}}">{{key}}</md-option>
+        </md-select>
+    </md-input-container>
+
+    <div id="searchField" flex="50" class="flex-50">
+        <md-input-container class="input-container">
+            <label>Keyword</label>
+            <input ng-model="vm.searchKeyword" required />
+        </md-input-container>
+    </div>
+</div>
+<div class="row button-row" layout="row">
+    <md-button class="md-primary md-raised" ng-click="vm.searchSwapi(vm.selectedResource, vm.searchKeyword)">Search</md-button>
+</div>
+
+<h2>Search Results</h2>
+<md-content class="md-padding" layout-xs="column" layout-wrap layout="row">
+    <div flex-xs="" flex-gt-xs="50" layout="column" ng-repeat="results in vm.searchResults.list">
+        <md-card>
+            <md-card-title>
+                <md-card-title-text>
+                <span class="md-headline" ng-if="results.title">{{results.title}}</span>
+                <span class="md-headline" ng-if="results.name">{{results.name}}</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <p ng-if="results.birth_year">
+                    Birth Year: {{results.birth_year}}
+                </p>
+                <p ng-if="results.gender">
+                    Gender: {{results.gender}}
+                </p>
+                <p ng-if="results.opening_crawl">
+                    Opening Crawl: {{results.opening_crawl}}
+                </p>
+                <p ng-if="results.manufacturer">
+                    Manufacturer: {{results.manufacturer}}
+                </p>
+                <p ng-if="results.passengers">
+                    Passengers: {{results.passengers | number}}
+                </p>
+                <p ng-if="results.cargo_capacity">
+                    Cargo Capacity: {{results.cargo_capacity | number}}
+                </p>
+                <p ng-if="results.classification">
+                    Classification: {{results.classification}}
+                </p>
+                <p ng-if="results.language">
+                    Language: {{results.language}}
+                </p>
+                <p ng-if="results.climate">
+                    Climate: {{results.climate}}
+                </p>
+                <p ng-if="results.population">
+                    Population: {{results.population | number}}
+                </p>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-icon-button" aria-label="Favorite">
+                    <md-icon ng-click="vm.addToFavorites({'name': results.name, 'url': results.url, 'title': results.title, 'favorited': true})"><i class="fas fa-heart"></i></md-icon>
+                </md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+</md-content>

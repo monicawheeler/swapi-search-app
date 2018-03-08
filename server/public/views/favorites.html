@@ -1,0 +1,29 @@
+<div layout="row" layout-align="end none">
+    <div class="count-container">
+        <i class="fas fa-heart"></i>
+        <span class="count-value">{{vm.favoriteCount.count > 0?vm.favoriteCount.count:''}}</span>
+    </div>
+</div>
+<h2>Favorites</h2>
+
+<md-content class="md-padding" layout-xs="column" layout-wrap layout="row">
+        <div flex-xs="" flex-gt-xs="33" layout="column" ng-repeat="favorite in vm.favorites.list">
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline" ng-if="favorite.name != 'false'">{{favorite.name}}</span>
+                        <span class="md-headline" ng-if="favorite.title != 'false'">{{favorite.title}}</span>
+                    </md-card-title-text>
+                </md-card-title> 
+                <md-card-content>
+                    <!-- content -->
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button class="md-icon-button" aria-label="Delete">
+                    <md-icon ng-click="vm.deleteFavorite(favorite._id)"><i class="far fa-trash-alt"></i></md-icon>
+                    </md-button>
+                    </md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </md-content>

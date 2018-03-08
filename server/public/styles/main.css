@@ -1,0 +1,35 @@
+body {
+    font-family: "Poller One", sans-serif;
+}
+
+md-input-container {
+    margin-bottom: 0;
+}
+
+.button-row {
+    margin-bottom: 40px;
+}
+
+.input-container {
+    width: 100%;
+}
+
+.count-container {
+    position: relative;
+}
+
+.count-value {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 18px;
+    text-shadow: -3px 1px 3px #ffffff;
+}
+
+.fa-heart {
+    color: #ff1493;
+}
+
+.count-container .fa-heart {
+    font-size: 30px;
+}
