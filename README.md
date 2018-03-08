@@ -7,6 +7,7 @@ An application to access Star Wars information in a friendly way.
 - Express
 - AngularJS
 - Node
+- Angular Material
 
 ## Getting Started
 
