@@ -8,12 +8,33 @@ An application to access Star Wars information in a friendly way.
 - AngularJS
 - Node
 
-### Retro
-- What went well:
-    - Using Angular Material was very rewarding 
-    - I was happy with the setup of taking values of the select and the keyword and creating a query string based on that 
+## Getting Started
 
-- What didn't go so well:
-    - I ran into the duplicates issue and ended up just dropping my database as a guess and it ended up working.
-    - I wanted to get the favorites from an API call but it didn't come together
-    - I wanted the favorites icon to be shared as a service but didn't get the time to put that together how I wanted to 
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+
+### Prerequisites
+
+Link to software that is required before you attempt to start the app.
+
+- [Node.js](https://nodejs.org/en/)
+- [Mongo](https://docs.mongodb.com/manual/installation/#tutorial-installation)
+
+
+### Installing
+
+Steps to get the development environment running.
+
+1. Download this project.
+2. `npm install`
+3. `npm start`
+4. Navigate to localhost:5000 in your favorite browser.
+
+## Screen Shot
+
+![Search View](/documentation/search-view.png)
+
+![Favorites View](/documentation/favorites-view.png)
+
+## Authors
+
+* Monica Wheeler
